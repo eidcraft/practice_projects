@@ -22,7 +22,7 @@
     <ProjectGuid>{2E078F2E-B44D-4EC3-ADC0-1675D8E330EA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>count_vowels</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
