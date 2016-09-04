@@ -16,8 +16,8 @@ size_t count_vowels(std::string& str)
 
 int main()
 {
-  std::string str{std::istream_iterator<double> {std::cin},
-                  std::istream_iterator<double> {}};
+  std::string str{std::istream_iterator<char> {std::cin},
+                  std::istream_iterator<char> {}};
 
   std::cout << "Vowels number = " << count_vowels(str) << std::endl;
   
