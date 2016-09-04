@@ -2,12 +2,15 @@
 #include <string>
 #include <iostream>
 #include <iterator>
-
+#include <algorithm>
 
 
 size_t count_vowels(std::string& str)
 {
-  return size_t{};
+  auto is_vowel = [](char c) { 
+    return std::string("aeiou").find(c) != std::string::npos;};
+  
+  return count_if(begin(str), end(str), is_vowel);
 }
 
 
