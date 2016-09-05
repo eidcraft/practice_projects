@@ -15,8 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="сount_words_in_a_string.cpp">
-      <Filter>Resource Files</Filter>
+    <ClCompile Include="count_words_in_a_string.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
