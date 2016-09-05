@@ -17,7 +17,8 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -35,16 +36,17 @@ public:
     QAction *actionCut;
     QAction *actionDelete;
     QWidget *centralWidget;
+    QVBoxLayout *verticalLayout;
+    QTextEdit *textEdit;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuEdit;
-    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *text_editorClass)
     {
         if (text_editorClass->objectName().isEmpty())
             text_editorClass->setObjectName(QStringLiteral("text_editorClass"));
-        text_editorClass->resize(410, 445);
+        text_editorClass->resize(425, 523);
         actionNew = new QAction(text_editorClass);
         actionNew->setObjectName(QStringLiteral("actionNew"));
         actionNew->setShortcut(QStringLiteral("Ctrl+N"));
@@ -67,18 +69,34 @@ public:
         actionDelete->setObjectName(QStringLiteral("actionDelete"));
         centralWidget = new QWidget(text_editorClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        centralWidget->setEnabled(true);
+        centralWidget->setAutoFillBackground(true);
+        verticalLayout = new QVBoxLayout(centralWidget);
+        verticalLayout->setSpacing(0);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        textEdit = new QTextEdit(centralWidget);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setMouseTracking(true);
+        textEdit->setFocusPolicy(Qt::ClickFocus);
+        textEdit->setFrameShape(QFrame::StyledPanel);
+        textEdit->setFrameShadow(QFrame::Plain);
+        textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        textEdit->setTabChangesFocus(false);
+        textEdit->setTabStopWidth(80);
+
+        verticalLayout->addWidget(textEdit);
+
         text_editorClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(text_editorClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 410, 21));
+        menuBar->setGeometry(QRect(0, 0, 425, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuEdit = new QMenu(menuBar);
         menuEdit->setObjectName(QStringLiteral("menuEdit"));
         text_editorClass->setMenuBar(menuBar);
-        statusBar = new QStatusBar(text_editorClass);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        text_editorClass->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuEdit->menuAction());
@@ -100,7 +118,7 @@ public:
 
     void retranslateUi(QMainWindow *text_editorClass)
     {
-        text_editorClass->setWindowTitle(QApplication::translate("text_editorClass", "text_editor", 0));
+        text_editorClass->setWindowTitle(QApplication::translate("text_editorClass", "Notepad", 0));
         actionNew->setText(QApplication::translate("text_editorClass", "New", 0));
         actionOpen->setText(QApplication::translate("text_editorClass", "Open...", 0));
         actionOpen->setShortcut(QApplication::translate("text_editorClass", "Ctrl+O", 0));
