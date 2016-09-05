@@ -105,6 +105,7 @@ public:
     {
         text_editorClass->setWindowTitle(QApplication::translate("text_editorClass", "text_editor", 0));
         actionNew->setText(QApplication::translate("text_editorClass", "New", 0));
+        actionNew->setShortcut(QString());
         actionOpen->setText(QApplication::translate("text_editorClass", "Open...", 0));
         actionSave->setText(QApplication::translate("text_editorClass", "Save", 0));
         actionSave_as->setText(QApplication::translate("text_editorClass", "Save as...", 0));
