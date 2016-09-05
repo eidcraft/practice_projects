@@ -46,7 +46,11 @@
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
   </widget>
-  <widget class="QToolBar" name="mainToolBar">
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
@@ -54,13 +58,12 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
    <property name="text">
-    <string>New              Ctrl + N</string>
+    <string>New</string>
    </property>
    <property name="shortcut">
-    <string notr="true"/>
+    <string notr="true">Ctrl+N</string>
    </property>
    <property name="shortcutContext">
     <enum>Qt::WindowShortcut</enum>
@@ -68,15 +71,15 @@
   </action>
   <action name="actionOpen">
    <property name="text">
-    <string>Open...         Ctrl + O</string>
+    <string>Open...</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+N</string>
+    <string>Ctrl+O</string>
    </property>
   </action>
   <action name="actionSave">
    <property name="text">
-    <string>Save              Ctrl + S</string>
+    <string>Save</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -94,7 +97,7 @@
   </action>
   <action name="actionCopy">
    <property name="text">
-    <string>Copy                 Ctrl + C</string>
+    <string>Copy</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+C</string>
@@ -102,7 +105,7 @@
   </action>
   <action name="actionPaste">
    <property name="text">
-    <string>Paste                 Ctrl + V</string>
+    <string>Paste</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+V</string>
@@ -110,7 +113,7 @@
   </action>
   <action name="actionCut">
    <property name="text">
-    <string>Cut                    Ctrl + X</string>
+    <string>Cut</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+X</string>
@@ -118,7 +121,7 @@
   </action>
   <action name="actionDelete">
    <property name="text">
-    <string>Delete                Del</string>
+    <string>Delete</string>
    </property>
    <property name="shortcut">
     <string>Del</string>

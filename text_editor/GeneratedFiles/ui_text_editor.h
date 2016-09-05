@@ -18,7 +18,6 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -39,7 +38,6 @@ public:
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuEdit;
-    QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *text_editorClass)
@@ -49,6 +47,8 @@ public:
         text_editorClass->resize(410, 445);
         actionNew = new QAction(text_editorClass);
         actionNew->setObjectName(QStringLiteral("actionNew"));
+        actionNew->setShortcut(QStringLiteral(""));
+        actionNew->setShortcutContext(Qt::WindowShortcut);
         actionOpen = new QAction(text_editorClass);
         actionOpen->setObjectName(QStringLiteral("actionOpen"));
         actionSave = new QAction(text_editorClass);
@@ -76,9 +76,6 @@ public:
         menuEdit = new QMenu(menuBar);
         menuEdit->setObjectName(QStringLiteral("menuEdit"));
         text_editorClass->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(text_editorClass);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        text_editorClass->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(text_editorClass);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         text_editorClass->setStatusBar(statusBar);
@@ -104,16 +101,21 @@ public:
     void retranslateUi(QMainWindow *text_editorClass)
     {
         text_editorClass->setWindowTitle(QApplication::translate("text_editorClass", "text_editor", 0));
-        actionNew->setText(QApplication::translate("text_editorClass", "New", 0));
-        actionNew->setShortcut(QString());
-        actionOpen->setText(QApplication::translate("text_editorClass", "Open...", 0));
-        actionSave->setText(QApplication::translate("text_editorClass", "Save", 0));
+        actionNew->setText(QApplication::translate("text_editorClass", "New              Ctrl + N", 0));
+        actionOpen->setText(QApplication::translate("text_editorClass", "Open...         Ctrl + O", 0));
+        actionOpen->setShortcut(QApplication::translate("text_editorClass", "Ctrl+N", 0));
+        actionSave->setText(QApplication::translate("text_editorClass", "Save              Ctrl + S", 0));
+        actionSave->setShortcut(QApplication::translate("text_editorClass", "Ctrl+S", 0));
         actionSave_as->setText(QApplication::translate("text_editorClass", "Save as...", 0));
         actionExit->setText(QApplication::translate("text_editorClass", "Exit", 0));
-        actionCopy->setText(QApplication::translate("text_editorClass", "Copy", 0));
-        actionPaste->setText(QApplication::translate("text_editorClass", "Paste", 0));
-        actionCut->setText(QApplication::translate("text_editorClass", "Cut", 0));
-        actionDelete->setText(QApplication::translate("text_editorClass", "Delete", 0));
+        actionCopy->setText(QApplication::translate("text_editorClass", "Copy                 Ctrl + C", 0));
+        actionCopy->setShortcut(QApplication::translate("text_editorClass", "Ctrl+C", 0));
+        actionPaste->setText(QApplication::translate("text_editorClass", "Paste                 Ctrl + V", 0));
+        actionPaste->setShortcut(QApplication::translate("text_editorClass", "Ctrl+V", 0));
+        actionCut->setText(QApplication::translate("text_editorClass", "Cut                    Ctrl + X", 0));
+        actionCut->setShortcut(QApplication::translate("text_editorClass", "Ctrl+X", 0));
+        actionDelete->setText(QApplication::translate("text_editorClass", "Delete                Del", 0));
+        actionDelete->setShortcut(QApplication::translate("text_editorClass", "Del", 0));
         menuFile->setTitle(QApplication::translate("text_editorClass", "File", 0));
         menuEdit->setTitle(QApplication::translate("text_editorClass", "Edit", 0));
     } // retranslateUi
