@@ -15,12 +15,14 @@ public:
     ~text_editor();
 
 private slots:
-  //void new_file();
-  void open_file();
-  void save_file();
+  void open_file_btn_clicked();
+  void save_file_btn_clicked();
 
 private:
   void set_window_title(QString& title);
+  //void new_file();
+  void open_file();
+  void save_file();
 };
 
 #endif // TEXT_EDITOR_H
