@@ -21,6 +21,9 @@ text_editor::text_editor(QWidget *parent)
 
   QObject::connect(ui.actionSave, &QAction::triggered,
                    this, &text_editor::save_file_btn_clicked);
+
+  QObject::connect(ui.actionNew, &QAction::triggered,
+                   this, &text_editor::create_file_btn_clicked);
 }
 
 text_editor::~text_editor()
@@ -91,7 +94,19 @@ void text_editor::open_file_btn_clicked()
   refresh_window_title();
 }
 
+void text_editor::create_file_btn_clicked()
+{
+  create_file();
+  refresh_window_title();
+}
+
 void text_editor::save_file_btn_clicked()
 {
   save_file();
+}
+
+void text_editor::create_file()
+{
+  file_name = QString{"Untitled"};
+  ui.textEdit->clear();
 }

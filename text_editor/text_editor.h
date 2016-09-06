@@ -17,10 +17,11 @@ public:
 private slots:
   void open_file_btn_clicked();
   void save_file_btn_clicked();
+  void create_file_btn_clicked();
 
 private:
   void refresh_window_title();
-  //void new_file();
+  void create_file();
   void open_file();
   void save_file();
 };
