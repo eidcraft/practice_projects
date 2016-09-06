@@ -47,6 +47,7 @@ void text_editor::open_file()
       file.close();
     } BOOST_SCOPE_EXIT_END
 
+    file_name = fileName;
     QTextStream in(&file);
     ui.textEdit->setText(in.readAll());
   }
