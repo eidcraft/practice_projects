@@ -17,6 +17,7 @@ private:
 
 private slots:
   void open_file();
+  void save_file();
 
 };
 
