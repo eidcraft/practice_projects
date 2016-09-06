@@ -16,7 +16,6 @@ private:
     Ui::text_editorClass ui;
 
 private slots:
-  void set_text();
   void open_file();
 
 };

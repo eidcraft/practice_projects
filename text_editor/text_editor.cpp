@@ -24,10 +24,6 @@ text_editor::~text_editor()
 
 }
 
-void text_editor::set_text()
-{
-  ui.textEdit->setText("set_text function invoked");
-}
 
 void text_editor::open_file()
 {
