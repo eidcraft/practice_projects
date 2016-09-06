@@ -20,6 +20,7 @@ private slots:
   void save_file_btn_clicked();
   void save_file_as_btn_clicked();
   void create_file_btn_clicked();
+  void exit_btn_clicked();
 
 private:
   QString get_file_name();
