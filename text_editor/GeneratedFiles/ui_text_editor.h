@@ -47,6 +47,9 @@ public:
         if (text_editorClass->objectName().isEmpty())
             text_editorClass->setObjectName(QStringLiteral("text_editorClass"));
         text_editorClass->resize(425, 523);
+        QIcon icon;
+        icon.addFile(QStringLiteral("../../../../../Desktop/Windows_Notepad_Icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        text_editorClass->setWindowIcon(icon);
         actionNew = new QAction(text_editorClass);
         actionNew->setObjectName(QStringLiteral("actionNew"));
         actionNew->setShortcut(QStringLiteral("Ctrl+N"));

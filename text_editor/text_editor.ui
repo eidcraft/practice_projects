@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Notepad</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../../Desktop/Windows_Notepad_Icon.png</normaloff>../../../../../Desktop/Windows_Notepad_Icon.png</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <property name="enabled">
     <bool>true</bool>
