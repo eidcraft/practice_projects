@@ -14,6 +14,8 @@ text_editor::text_editor(QWidget *parent)
 {
   ui.setupUi(this);
 
+  set_window_title(file_name);
+
   QObject::connect(ui.actionOpen, &QAction::triggered,
                    this, &text_editor::open_file);
 
@@ -75,4 +77,9 @@ void text_editor::save_file()
       stream.flush();
     }
   }
+}
+
+void text_editor::set_window_title(QString& title)
+{
+  this->setWindowTitle(file_name + " - Notepad");
 }

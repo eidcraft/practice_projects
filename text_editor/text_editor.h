@@ -7,18 +7,20 @@
 class text_editor : public QMainWindow
 {
     Q_OBJECT
+    QString file_name{"Untitled"};
+    Ui::text_editorClass ui;
 
 public:
     text_editor(QWidget *parent = 0);
     ~text_editor();
 
-private:
-    Ui::text_editorClass ui;
-
 private slots:
+  //void new_file();
   void open_file();
   void save_file();
 
+private:
+  void set_window_title(QString& title);
 };
 
 #endif // TEXT_EDITOR_H
